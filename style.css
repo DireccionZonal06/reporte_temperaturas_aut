@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.grafoMaximas {
+    width: 600px;
+    height: 500px;
+    background-color: aqua;
+    
+}
+.tabla{
+    background-color: blueviolet;
+}
+.contenedor{
+    display: flex;
+}
