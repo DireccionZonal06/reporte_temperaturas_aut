@@ -1,122 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <title>Document</title>
 </head>
 <body>
-    <h1>Comparación de temperaturas - DZ6</h1>
+    <main class="container">
+        <h1>Comparación de temperaturas - DZ6</h1>
     
-    <select name="" id="seleccion">
-        <option value="">Selecciona Estación</option>
-        <option value="chivay">Chivay</option>
-        <option value="cotahuasi">Cotahuasi</option>
-        <option value="crucero">Crucero Alto</option>
-        <option value="huanca">Huanca</option>
-    </select>
-    
-    
-    <div class="contenedor">
-        <div id="grafoMaximas" class="grafoMaximas"></div>
-        <div class="tabla">
-            <table>
-                <thead>
-                    <th>
-                        <td>Días</td>
-                        <td>Temp_Máx - EMA</td>
-                        <td>Temp_Máx - CO</td>
-                    </th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
-    <script>
-        const d=document,
-        $seleccion=d.getElementById('seleccion'),
-        $grafoMaximas=d.getElementById('grafoMaximas');
-        /*VARIABLES ESTACIONES*/
-        /*CHIVAY MAXIMAS*/
-        var ema_chivay = {
-            x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-            y: [-1.5,-1.7,-0.5,-1.2,-1.2,-0.7,-1.5,-0.7,-0.2,0.3,1.2,2.8,-0.4,2,0.6,-0.4,0,0.5,1.5,2.5,1.1,2.1,1.5,0.5,4.8,-0.6,-0.4,-0.6,3,0.5,-0.4],
-            name: 'EMA Chivay',
-            type: 'lines+markerS'
-        };
-        /*CHIVAY MINIMAS*/
-            var co_chivay = {
-            x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-            y: [-1.4,-2,-0.8,-1.4,-2,-0.8,-1.4,-1,-0.4,-1.4,0.8,1.9,-0.3,1.6,-0.2,-1.6,-0.2,0,0.8,1.2,0.6,1.8,0.6,0.4,4.2,-1.2,-1,-1.6,2.4,-0.2,-1.2],
-            name: 'CO Chivay',
-            type: 'lines+markerS'
-        };
-        /*COTAHUASI MAXIMAS*/
-        var ema_cotahuasi={
-            x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-            y: [,10.8,12.3,,11.7,11.8,11.3,10.7,10.5,10.5,,10.5,9.8,12.1,12.1,10.5,11.2,12.2,12.5,14.7,13.6,13.4,14.6,11.2,10.3,10.4,10.5,11.4,12.3,11.3,9],
-            type: 'scatter'
-        };
-        /*COTAHUASI MINIMAS*/
-        var co_cotahuasi={
-            x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-            y: [9.2,9.8,11.2,10.6,10.6,10.8,10.2,10,9.6,9.8,12.2,9.8,9.2,11.2,11.2,9.6,10.4,10.8,11.4,13.4,11.8,12.2,13.4,10.2,9.6,9.6,9.4,10.6,11.8,10.2,8.4],
-            type: 'scatter'
-        };
-        /*CRUCERO MAXIMAS*/
-        var ema_crucero={
-            x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-            y: [],
-            type: 'scatter'
-        };
-        /*CRUCERO MINIMAS*/
-        var co_crucero={
-            x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-            y: [],
-            type: 'scatter'
-        };
-        /*HUANCA MAXIMAS*/
-        var ema_huanca={
-            x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-            y: [],
-            type: 'scatter'
-        };
-        /*HUANCA MINIMAS*/
-        var co_huanca={
-            x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-            y: [],
-            type: 'scatter'
-        };
-        $seleccion.addEventListener('change',()=>{
-           let $dataMaximos = $seleccion.value;
-           if($dataMaximos==='chivay'){
-            var data = [ema_chivay, co_chivay];
-            console.log(data);
-            var layout = {
-                title: 'Temperaturas Máximas - Chivay - Octubre 2023'
+        <select name="" id="seleccion">
+            <option value="">Selecciona Estación</option>
+            <option value="chivay">Chivay</option>
+            <option value="cotahuasi">Cotahuasi</option>
+            <option value="crucero">Crucero Alto</option>
+            <option value="huanca">Huanca</option>
+        </select>
+        
+        
+        <div class="contenedor">
+            <div id="grafoMinimas" class="grafoMinimas"></div>
+            <div class="tabla">
+                <table class="table table-responsive text-center">
+                    <thead>
+                        
+                    </thead>
+                    <tbody></tbody>
+                </table>
                 
-            };
-
-            Plotly.newPlot($grafoMaximas, data, layout);
-           };
-           if($dataMaximos=='cotahuasi'){
-            var data = [ema_cotahuasi, co_cotahuasi];
-            console.log(data);
-            var layout = {
-            title:'Temperaturas Máximas - Cotahuasi - Octubre 2023'
-            };
-
-            Plotly.newPlot($grafoMaximas, data, layout);
-           };
-           
-        });
-    </script>
+            </div>
+            <div id="grafoMaximas" class="grafoMaximas"></div>
+        </div>
+    </main>
+  
+   
+    <script src="./app.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
 </body>
 </html>
