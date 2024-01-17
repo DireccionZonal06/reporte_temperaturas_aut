@@ -156,10 +156,14 @@ const datos = data =>{
             var dataGrafo = [ema_chivay_min,co_chivay_min,dif_minimas_chivay];
     
             var layout = {
-                title: 'Temperaturas Mínimas - Chivay - Enero 2024'
+                title: 'Temperaturas Mínimas - Chivay - Enero 2024',
+                showlegend: true,
+                legend: {"orientation": "h"}
             };
 
-            Plotly.newPlot($grafoMinimas, dataGrafo, layout);
+            var config = {responsive: true}
+
+            Plotly.newPlot($grafoMinimas, dataGrafo, layout, config);
 
             ////////////////Tablas///////////////////////////
            let [...dias] = data[0].dias,
