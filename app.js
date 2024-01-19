@@ -1,9 +1,9 @@
 const d=document,
 $seleccion=d.getElementById('seleccion'),
 $grafoMinimas=d.getElementById('grafoMinimas'),
-$tabla=d.querySelector('.tabla');
-
-let xDatos = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+$grafoMaximas=d.getElementById('grafoMaximas'),
+$tablaMinimas=d.querySelector('.tabla-minimas'),
+$tablaMaximas=d.querySelector('.tabla-maximas');
 
 const getAll = async () =>{
     try {
@@ -19,205 +19,234 @@ const getAll = async () =>{
 
 d.addEventListener("DOMContentLoaded", getAll);
 
-
-
-/*VARIABLES ESTACIONES*/
-/*CHIVAY MÍNIMA AUT*/
-
-
-/*var ema_chivay = {
-    x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-    //y: [-1.5,-1.7,-0.5,-1.2,-1.2,-0.7,-1.5,-0.7,-0.2,0.3,1.2,2.8,-0.4,2,0.6,-0.4,0,0.5,1.5,2.5,1.1,2.1,1.5,0.5,4.8,-0.6,-0.4,-0.6,3,0.5,-0.4],
-    y: xDatosMax,
-    name: 'EMA Chivay',
-    type: 'lines+markerS',
-    
-};
-console.log(y);
-/*CHIVAY MINIMAS CO*/
-/*var co_chivay = {
-    x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-    //y: [-1.4,-2,-0.8,-1.4,-2,-0.8,-1.4,-1,-0.4,-1.4,0.8,1.9,-0.3,1.6,-0.2,-1.6,-0.2,0,0.8,1.2,0.6,1.8,0.6,0.4,4.2,-1.2,-1,-1.6,2.4,-0.2,-1.2],
-    name: 'CO Chivay',
-    type: 'lines+markerS'
-};
-
-/*CHIVAY MÁXIMAS AUT*/
-/*var ema_chivay = {
-    x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-    //y: [-1.5,-1.7,-0.5,-1.2,-1.2,-0.7,-1.5,-0.7,-0.2,0.3,1.2,2.8,-0.4,2,0.6,-0.4,0,0.5,1.5,2.5,1.1,2.1,1.5,0.5,4.8,-0.6,-0.4,-0.6,3,0.5,-0.4],
-    name: 'EMA Chivay',
-    type: 'lines+markerS',
-    
-};
-/*CHIVAY MÁXIMAS CO*/
-/*var co_chivay = {
-    x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-    //y: [-1.4,-2,-0.8,-1.4,-2,-0.8,-1.4,-1,-0.4,-1.4,0.8,1.9,-0.3,1.6,-0.2,-1.6,-0.2,0,0.8,1.2,0.6,1.8,0.6,0.4,4.2,-1.2,-1,-1.6,2.4,-0.2,-1.2],
-    name: 'CO Chivay',
-    type: 'lines+markerS'
-};
-/*CHIVAY DIFERENCIAS MÁXIMAS*/
-/*var dif_minimas_chivay = {
-    x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-    //y: [-0.4,0.1,0.1,0.2,-1,-0.3,-1,-0.2,-0.4,0.2,0.1,0.3,-0.3,1.6,-0.2,-1.6,-0.2,0,0.8,1.2,0.6,1.8,0.6,0.4,4.2,-1.2,-1,-1.6,2.4,-0.2,-1.2],
-    name: 'Comparación',
-    type: 'bar',
-    text: [-0.4,0.1,0.1,0.2,-1,-0.3,-1,-0.2,-0.4,0.2,0.1,0.3,-0.3,1.6,-0.2,-1.6,-0.2,0,0.8,1.2,0.6,1.8,0.6,0.4,4.2,-1.2,-1,-1.6,2.4,-0.2,-1.2].map(String),
-    textposition: 'auto',
-    hoverinfo: 'none',
-    marker: {
-        color: 'rgb(158,202,225)',
-        opacity: 0.6,
-        line: {
-        color: 'rgb(8,48,107)',
-        width: 1
-        }
-    },
-    width: 0.2
-};
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-/*COTAHUASI MÍNIMAS EMA*/
-/*var ema_cotahuasi={
-    x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-    y: [,10.8,12.3,,11.7,11.8,11.3,10.7,10.5,10.5,,10.5,9.8,12.1,12.1,10.5,11.2,12.2,12.5,14.7,13.6,13.4,14.6,11.2,10.3,10.4,10.5,11.4,12.3,11.3,9],
-    name: 'EMA Cotahuasi',
-    type: 'scatter'
-};
-/*COTAHUASI MINIMAS CO*/
-/*var co_cotahuasi={
-    x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-    y: [9.2,9.8,11.2,10.6,10.6,10.8,10.2,10,9.6,9.8,12.2,9.8,9.2,11.2,11.2,9.6,10.4,10.8,11.4,13.4,11.8,12.2,13.4,10.2,9.6,9.6,9.4,10.6,11.8,10.2,8.4],
-    name: 'CO Cotahuasi',
-    type: 'scatter'
-};
-/*CRUCERO MAXIMAS*/
-/*var ema_crucero={
-    x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-    y: [],
-    type: 'scatter'
-};
-/*CRUCERO MINIMAS*/
-/*var co_crucero={
-    x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-    y: [],
-    type: 'scatter'
-};
-/*HUANCA MAXIMAS*/
-/*var ema_huanca={
-    x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-    y: [],
-    type: 'scatter'
-};
-/*HUANCA MINIMAS*/
-/*var co_huanca={
-    x: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-    y: [],
-    type: 'scatter'
-};*/
-
 const datos = data =>{
     $seleccion.addEventListener('change',()=>{
         if($seleccion.value==='chivay'){
-            /*CHIVAY MÍNIMA AUT*/
-            var ema_chivay_min = {
-                x: xDatos,
-                y: data[0].automaticas[0].temperatura_min,
-                name: 'EMA Chivay',
-                type: 'lines+markerS',
-            };
-            /*CHIVAY MINIMAS CO*/
-            var co_chivay_min = {
-                x: xDatos,
-                y: data[0].convencionales[0].temperatura_min,
-                name: 'CO Chivay',
-                type: 'lines+markerS'
-            };
-            /*CHIVAY DIFERENCIAS*/
-            var dif_minimas_chivay = {
-                x: xDatos,
-                y: data[0].comparaciones[0].temperatura_min,
-                name: 'Comparación',
-                type: 'bar',
-                /*text: [-0.1,0.3,0.3,0.2,0.8,0.1,-0.1,0.3,0.2,1.7,0.4,0.9,-0.1,0.4,0.8,1.2,0.2,0.5,0.7,1.3,0.5,0.3,0.9,0.1,0.6,0.6,0.6,1,0.6,0.7,0.8].map(String),
-                textposition: 'auto',
-                hoverinfo: 'none',*/
-                marker: {
-                    color: 'rgb(158,202,225)',
-                    opacity: 0.6,
-                    line: {
-                    color: 'rgb(8,48,107)',
-                    width: 1
-                    }
-                },
-                width: 0.2
-            };
+            $tablaMinimas.querySelector('thead').innerHTML='';
+            $tablaMaximas.querySelector('thead').innerHTML='';
+            
+            let ema_min = data[0].automaticas[0].temperatura_min,
+            co_min = data[0].convencionales[0].temperatura_min,
+            dif_min = data[0].comparaciones[0].temperatura_min,
+            ema_max = data[0].automaticas[0].temperatura_max,
+            co_max = data[0].convencionales[0].temperatura_max,
+            dif_max = data[0].comparaciones[0].temperatura_max,
+            nombreEMA = 'EMA Chivay',
+            nombreCO = 'CO Chivay',
+            tituloMinimas = 'Temperaturas Mínimas - Chivay - Enero 2024',
+            tituloMaximas = 'Temperaturas Máximas - Chivay - Enero 2024',
+            dias = data[0].dias;
 
-            var dataGrafo = [ema_chivay_min,co_chivay_min,dif_minimas_chivay];
-    
-            var layout = {
-                title: 'Temperaturas Mínimas - Chivay - Enero 2024',
-                showlegend: true,
-                legend: {"orientation": "h"}
-            };
+            grafoTable(ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias);
+         };
+         if($seleccion.value==='crucero'){
+            $tablaMinimas.querySelector('thead').innerHTML='';
+            $tablaMaximas.querySelector('thead').innerHTML='';
+            
+            let ema_min = data[0].automaticas[1].temperatura_min,
+            co_min = data[0].convencionales[1].temperatura_min,
+            dif_min = data[0].comparaciones[1].temperatura_min,
+            ema_max = data[0].automaticas[1].temperatura_max,
+            co_max = data[0].convencionales[1].temperatura_max,
+            dif_max = data[0].comparaciones[1].temperatura_max,
+            nombreEMA = 'EMA Crucero Alto',
+            nombreCO = 'CO Crucero Alto',
+            tituloMinimas = 'Temperaturas Mínimas - Crucero Alto - Enero 2024',
+            tituloMaximas = 'Temperaturas Máximas - Crucero Alto - Enero 2024',
+            dias = data[0].dias;
 
-            var config = {responsive: true}
-
-            Plotly.newPlot($grafoMinimas, dataGrafo, layout, config);
-
-            ////////////////Tablas///////////////////////////
-           let [...dias] = data[0].dias,
-           [...tempMin_aut_chivay] = data[0].automaticas[0].temperatura_min,
-           [...tempMin_co_chivay] = data[0].convencionales[0].temperatura_min;
-           
-           dias.unshift('');
-           tempMin_aut_chivay.unshift('EMA');
-           tempMin_co_chivay.unshift('CO');
-
-           const tr=d.createElement('tr'),
-           tr_1 = d.createElement('tr'),
-           tr_2 = d.createElement('tr');
-
-           dias.forEach(e => {
-            const th = d.createElement('th');
-            th.innerHTML=e;
-            tr.appendChild(th);
-            $tabla.querySelector('thead').appendChild(tr);
-           });
-
-           tempMin_aut_chivay.forEach(e => {
-            const td = d.createElement('td');
-            td.innerHTML=e;
-            tr_1.appendChild(td);
-            $tabla.querySelector('thead').appendChild(tr_1);
-           });
-
-           tempMin_co_chivay.forEach(e => {
-            const td = d.createElement('td');
-            td.innerHTML=e;
-            tr_2.appendChild(td);
-            $tabla.querySelector('thead').appendChild(tr_2);
-           });
+            grafoTable(ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias);
          };
      });
 };
 
+/////FUNCION GRAFO Y TABLAS
 
-    
-    
-   
-    
-
-    
- /*  };
-   if($seleccion.value=='cotahuasi'){
-    var data = [ema_cotahuasi, co_cotahuasi];
-    console.log(data);
-    var layout = {
-    title:'Temperaturas Mínimas - Cotahuasi - Enero 2024'
+const grafoTable = (ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias) =>{
+    /*MÍNIMA AUT*/
+    var emaMin = {
+        x: dias,
+        y: ema_min,
+        name: nombreEMA,
+        type: 'lines+markerS',
+    };
+    /*MINIMAS CO*/
+    var coMin = {
+        x: dias,
+        y: co_min,
+        name: nombreCO,
+        type: 'lines+markerS'
+    };
+    /*DIFERENCIAS MINIMAS*/
+    var difMinimas = {
+        x: dias,
+        y: dif_min,
+        name: 'Comparación',
+        type: 'bar',
+        /*text: [-0.1,0.3,0.3,0.2,0.8,0.1,-0.1,0.3,0.2,1.7,0.4,0.9,-0.1,0.4,0.8,1.2,0.2,0.5,0.7,1.3,0.5,0.3,0.9,0.1,0.6,0.6,0.6,1,0.6,0.7,0.8].map(String),
+        textposition: 'auto',
+        hoverinfo: 'none',*/
+        marker: {
+            color: 'rgb(158,202,225)',
+            opacity: 0.6,
+            line: {
+            color: 'rgb(8,48,107)',
+            width: 1
+            }
+        },
+        width: 0.2
     };
 
-    Plotly.newPlot($grafoMinimas, data, layout);
-   };
+    var dataGrafo = [emaMin,coMin,difMinimas];
+
+    var layout = {
+        title: tituloMinimas,
+        showlegend: true,
+        legend: {"orientation": "h"}
+    };
+
+    var config = {responsive: true}
+
+    Plotly.newPlot($grafoMinimas, dataGrafo, layout, config);
+
+    ////////////////Tablas///////////////////////////
+   let [...diasMes] = dias,
+   [...tempMin_aut] = ema_min,
+   [...tempMin_co] = co_min,
+   [...tempMin_comparaciones] = dif_min;
    
-});*/
+   diasMes.unshift('');
+   tempMin_aut.unshift('EMA');
+   tempMin_co.unshift('CO');
+   tempMin_comparaciones.unshift('Comp.')
+
+   const tr=d.createElement('tr'),
+   tr_1 = d.createElement('tr'),
+   tr_2 = d.createElement('tr'),
+   tr_3 = d.createElement('tr');
+
+   diasMes.forEach(e => {
+    const th = d.createElement('th');
+    th.innerHTML=e;
+    tr.appendChild(th);
+    $tablaMinimas.querySelector('thead').appendChild(tr);
+   });
+
+   tempMin_aut.forEach(e => {
+    const td = d.createElement('td');
+    td.innerHTML=e;
+    tr_1.appendChild(td);
+    $tablaMinimas.querySelector('thead').appendChild(tr_1);
+   });
+
+   tempMin_co.forEach(e => {
+    const td = d.createElement('td');
+    td.innerHTML=e;
+    tr_2.appendChild(td);
+    $tablaMinimas.querySelector('thead').appendChild(tr_2);
+   });
+
+   tempMin_comparaciones.forEach(e => {
+    const td = d.createElement('td');
+    td.innerHTML=e;
+    tr_3.appendChild(td);
+    $tablaMinimas.querySelector('thead').appendChild(tr_3);
+   });
+//////////////////////////////////////////////
+   /*MÁXIMA AUT*/
+    var emaMax = {
+        x: dias,
+        y: ema_max,
+        name: nombreEMA,
+        type: 'lines+markerS',
+    };
+    /*MÁXIMA CO*/
+    var coMax = {
+        x: dias,
+        y: co_max,
+        name: nombreCO,
+        type: 'lines+markerS'
+    };
+    /*DIFERENCIAS MAXIMAS*/
+    var difMaximas = {
+        x: dias,
+        y: dif_max,
+        name: 'Comparación',
+        type: 'bar',
+        /*text: [-0.1,0.3,0.3,0.2,0.8,0.1,-0.1,0.3,0.2,1.7,0.4,0.9,-0.1,0.4,0.8,1.2,0.2,0.5,0.7,1.3,0.5,0.3,0.9,0.1,0.6,0.6,0.6,1,0.6,0.7,0.8].map(String),
+        textposition: 'auto',
+        hoverinfo: 'none',*/
+        marker: {
+            color: 'rgb(158,202,225)',
+            opacity: 0.6,
+            line: {
+            color: 'rgb(8,48,107)',
+            width: 1
+            }
+        },
+        width: 0.2
+    };
+
+    var dataGrafo = [emaMax,coMax,difMaximas];
+
+    var layout = {
+        title: tituloMaximas,
+        showlegend: true,
+        legend: {"orientation": "h"}
+    };
+
+    var config = {responsive: true}
+
+    Plotly.newPlot($grafoMaximas, dataGrafo, layout, config);
+
+    ////////////////Tablas///////////////////////////
+   let [...tempMax_aut] = ema_max,
+   [...tempMax_co] = co_max,
+   [...tempMax_comparaciones] = dif_max;
+   
+   tempMax_aut.unshift('EMA');
+   tempMax_co.unshift('CO');
+   tempMax_comparaciones.unshift('Comp.')
+
+   const tr_4=d.createElement('tr'),
+   tr_5 = d.createElement('tr'),
+   tr_6 = d.createElement('tr'),
+   tr_7 = d.createElement('tr');
+
+   diasMes.forEach(e => {
+    const th = d.createElement('th');
+    th.innerHTML=e;
+    tr_4.appendChild(th);
+    $tablaMaximas.querySelector('thead').appendChild(tr_4);
+   });
+
+   tempMax_aut.forEach(e => {
+    const td = d.createElement('td');
+    td.innerHTML=e;
+    tr_5.appendChild(td);
+    $tablaMaximas.querySelector('thead').appendChild(tr_5);
+   });
+
+   tempMax_co.forEach(e => {
+    const td = d.createElement('td');
+    td.innerHTML=e;
+    tr_6.appendChild(td);
+    $tablaMaximas.querySelector('thead').appendChild(tr_6);
+   });
+
+   tempMax_comparaciones.forEach(e => {
+    const td = d.createElement('td');
+    td.innerHTML=e;
+    tr_7.appendChild(td);
+    $tablaMaximas.querySelector('thead').appendChild(tr_7);
+   });
+};
+
+
+    
+    
+   
+    
+
+    
+ 
