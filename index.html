@@ -9,31 +9,39 @@
 </head>
 <body>
     <main class="container">
-        <h1>Comparación de temperaturas - DZ6</h1>
+        <div class="text-center">
+          <h1>Temperaturas Y Precipitaciones - EHMA's DZ6  </h1>
+          <h4 >Reporte Nº001-SENAMHI-DZ6-JCHP</h4>
+        </div>
     
         <select name="" id="seleccion">
             <option value="">Selecciona Estación</option>
-            <option value="chivay">Chivay</option>
-            <option value="cotahuasi">Cotahuasi</option>
             <option value="crucero">Crucero Alto</option>
+            <option value="cotahuasi">Cotahuasi</option>
+            <option value="chivay">Chivay</option>
             <option value="huanca">Huanca</option>
         </select>
-        
-        
-        <div class="contenedor">
-            <div id="grafoMinimas" class="grafoMinimas"></div>
-            <div class="tabla">
-                <table class="table table-responsive text-center">
-                    <thead>
-                        
-                    </thead>
+            
+            <div id="grafoMinimas" class="grafoMinimas"></div>  
+            <div class="tabla-minimas">
+                <table class="table table-sm table-responsive text-center">
+                    <thead></thead>
                     <tbody></tbody>
                 </table>
-                
             </div>
+            <hr>
+            <br><br><br>
             <div id="grafoMaximas" class="grafoMaximas"></div>
-        </div>
+            <div class="tabla-maximas">
+              <table class="table table-sm table-responsive text-center">
+                  <thead></thead>
+                  <tbody></tbody>
+              </table>
+          </div>
     </main>
+    <div class="container-fluid" style="width: 80vw;">
+      
+    </div>
   
    
     <script src="./app.js"></script>
