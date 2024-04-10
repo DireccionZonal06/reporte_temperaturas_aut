@@ -4,12 +4,40 @@
     margin: 0;
 }
 
-.grafoMaximas {
-    width: 600px;
-    height: 500px;
-    background-color: aqua;
+body {
+    background-color: #DFE3E8;
     
 }
-.tabla{
-    background-color: blueviolet;
+
+.cabecera {
+    
 }
+
+main {
+    background-color: #DFE3E8
+}
+
+.logo {
+    width: 200px;
+}
+
+.fila-minimas{
+    background-color: #3d4074;
+}
+
+.fila-maximas{
+    background-color: #3d4074;
+}
+
+/*.grafoMaximas  {
+    width: 600px;
+    height: 500px;
+    
+    
+}
+
+.grafoMinimas{
+    width: 600px;
+    height: 500px;
+}*/
+
