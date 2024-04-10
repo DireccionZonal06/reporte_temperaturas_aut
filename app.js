@@ -102,7 +102,9 @@ const grafoTable = (ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nomb
     var layout = {
         title: tituloMinimas,
         showlegend: true,
-        legend: {"orientation": "h"}
+        legend: {"orientation": "h"},
+        paper_bgcolor: '#FFFFFF',
+        plot_bgcolor: '#FFFFFF'
     };
 
     var config = {responsive: true}
