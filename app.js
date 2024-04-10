@@ -33,8 +33,8 @@ const datos = data =>{
             dif_max = data[0].comparaciones[0].temperatura_max,
             nombreEMA = 'EMA Chivay',
             nombreCO = 'CO Chivay',
-            tituloMinimas = 'Temperaturas Mínimas - Chivay - Enero 2024',
-            tituloMaximas = 'Temperaturas Máximas - Chivay - Enero 2024',
+            tituloMinimas = 'Temp. Mínimas - Chivay - Enero 2024',
+            tituloMaximas = 'Temp. Máximas - Chivay - Enero 2024',
             dias = data[0].dias;
 
             grafoTable(ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias);
@@ -51,8 +51,8 @@ const datos = data =>{
             dif_max = data[0].comparaciones[1].temperatura_max,
             nombreEMA = 'EMA Crucero Alto',
             nombreCO = 'CO Crucero Alto',
-            tituloMinimas = 'Temperaturas Mínimas - Crucero Alto - Enero 2024',
-            tituloMaximas = 'Temperaturas Máximas - Crucero Alto - Enero 2024',
+            tituloMinimas = 'Temp. Mínimas - Crucero Alto - Enero 2024',
+            tituloMaximas = 'Temp. Máximas - Crucero Alto - Enero 2024',
             dias = data[0].dias;
 
             grafoTable(ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias);
