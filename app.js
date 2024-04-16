@@ -5,6 +5,7 @@ $grafoMaximas=d.getElementById('grafoMaximas'),
 $tablaMinimas=d.querySelector('.tabla-minimas'),
 $tablaMaximas=d.querySelector('.tabla-maximas');
 
+
 const getAll = async () =>{
     try {
         const res = await fetch('db.json'),
@@ -33,8 +34,9 @@ const datos = data =>{
             dif_max = data[0].comparaciones[0].temperatura_max,
             nombreEMA = 'EMA Chivay',
             nombreCO = 'CO Chivay',
-            tituloMinimas = 'Temp. Mínimas - Chivay - Enero 2024',
-            tituloMaximas = 'Temp. Máximas - Chivay - Enero 2024',
+            stringFecha = data[0].fecha,
+            tituloMinimas = `Temp. Mínimas - Chivay - ${stringFecha}`,
+            tituloMaximas = `Temp. Máximas - Chivay - ${stringFecha}`,
             dias = data[0].dias;
 
             grafoTable(ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias);
@@ -51,8 +53,218 @@ const datos = data =>{
             dif_max = data[0].comparaciones[1].temperatura_max,
             nombreEMA = 'EMA Crucero Alto',
             nombreCO = 'CO Crucero Alto',
-            tituloMinimas = 'Temp. Mínimas - Crucero Alto - Enero 2024',
-            tituloMaximas = 'Temp. Máximas - Crucero Alto - Enero 2024',
+            stringFecha = data[0].fecha,
+            tituloMinimas = `Temp. Mínimas - Crucero Alto - ${stringFecha}`,
+            tituloMaximas = `Temp. Máximas - Crucero Alto - ${stringFecha}`,
+            dias = data[0].dias;
+
+            grafoTable(ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias);
+         };
+         if($seleccion.value==='imata'){
+            $tablaMinimas.querySelector('thead').innerHTML='';
+            $tablaMaximas.querySelector('thead').innerHTML='';
+            
+            let ema_min = data[0].automaticas[2].temperatura_min,
+            co_min = data[0].convencionales[2].temperatura_min,
+            dif_min = data[0].comparaciones[2].temperatura_min,
+            ema_max = data[0].automaticas[2].temperatura_max,
+            co_max = data[0].convencionales[2].temperatura_max,
+            dif_max = data[0].comparaciones[2].temperatura_max,
+            nombreEMA = 'EMA Imata',
+            nombreCO = 'CO Imata',
+            stringFecha = data[0].fecha,
+            tituloMinimas = `Temp. Mínimas - Imata - ${stringFecha}`,
+            tituloMaximas = `Temp. Máximas - Imata - ${stringFecha}`,
+            dias = data[0].dias;
+
+            grafoTable(ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias);
+         };
+         if($seleccion.value==='huanca'){
+            $tablaMinimas.querySelector('thead').innerHTML='';
+            $tablaMaximas.querySelector('thead').innerHTML='';
+            
+            let ema_min = data[0].automaticas[3].temperatura_min,
+            co_min = data[0].convencionales[3].temperatura_min,
+            dif_min = data[0].comparaciones[3].temperatura_min,
+            ema_max = data[0].automaticas[3].temperatura_max,
+            co_max = data[0].convencionales[3].temperatura_max,
+            dif_max = data[0].comparaciones[3].temperatura_max,
+            nombreEMA = 'EMA Huanca',
+            nombreCO = 'CO Huanca',
+            stringFecha = data[0].fecha,
+            tituloMinimas = `Temp. Mínimas - Huanca - ${stringFecha}`,
+            tituloMaximas = `Temp. Máximas - Huanca - ${stringFecha}`,
+            dias = data[0].dias;
+
+            grafoTable(ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias);
+         };
+         if($seleccion.value==='majes'){
+            $tablaMinimas.querySelector('thead').innerHTML='';
+            $tablaMaximas.querySelector('thead').innerHTML='';
+            
+            let ema_min = data[0].automaticas[4].temperatura_min,
+            co_min = data[0].convencionales[4].temperatura_min,
+            dif_min = data[0].comparaciones[4].temperatura_min,
+            ema_max = data[0].automaticas[4].temperatura_max,
+            co_max = data[0].convencionales[4].temperatura_max,
+            dif_max = data[0].comparaciones[4].temperatura_max,
+            nombreEMA = 'EMA Pampa De Majes',
+            nombreCO = 'CO Pampa De Majes',
+            stringFecha = data[0].fecha,
+            tituloMinimas = `Temp. Mínimas - Pampa de Majes - ${stringFecha}`,
+            tituloMaximas = `Temp. Máximas - Pampa de Majes - ${stringFecha}`,
+            dias = data[0].dias;
+
+            grafoTable(ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias);
+         };
+         if($seleccion.value==='cotahuasi'){
+            $tablaMinimas.querySelector('thead').innerHTML='';
+            $tablaMaximas.querySelector('thead').innerHTML='';
+            
+            let ema_min = data[0].automaticas[5].temperatura_min,
+            co_min = data[0].convencionales[5].temperatura_min,
+            dif_min = data[0].comparaciones[5].temperatura_min,
+            ema_max = data[0].automaticas[5].temperatura_max,
+            co_max = data[0].convencionales[5].temperatura_max,
+            dif_max = data[0].comparaciones[5].temperatura_max,
+            nombreEMA = 'EMA Cotahuasi',
+            nombreCO = 'CO Cotahuasi',
+            stringFecha = data[0].fecha,
+            tituloMinimas = `Temp. Mínimas - Cotahuasi - ${stringFecha}`,
+            tituloMaximas = `Temp. Máximas - Cotahuasi - ${stringFecha}`,
+            dias = data[0].dias;
+
+            grafoTable(ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias);
+         };
+         if($seleccion.value==='pampilla'){
+            $tablaMinimas.querySelector('thead').innerHTML='';
+            $tablaMaximas.querySelector('thead').innerHTML='';
+            
+            let ema_min = data[0].automaticas[6].temperatura_min,
+            co_min = data[0].convencionales[6].temperatura_min,
+            dif_min = data[0].comparaciones[6].temperatura_min,
+            ema_max = data[0].automaticas[6].temperatura_max,
+            co_max = data[0].convencionales[6].temperatura_max,
+            dif_max = data[0].comparaciones[6].temperatura_max,
+            nombreEMA = 'EMA La Pampilla',
+            nombreCO = 'MAP La Pampilla',
+            stringFecha = data[0].fecha,
+            tituloMinimas = `Temp. Mínimas - La Pampilla - ${stringFecha}`,
+            tituloMaximas = `Temp. Máximas - La Pampilla - ${stringFecha}`,
+            dias = data[0].dias;
+
+            grafoTable(ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias);
+         };
+         if($seleccion.value==='patahuasi'){
+            $tablaMinimas.querySelector('thead').innerHTML='';
+            $tablaMaximas.querySelector('thead').innerHTML='';
+            
+            let ema_min = data[0].automaticas[7].temperatura_min,
+            co_min = data[0].convencionales[7].temperatura_min,
+            dif_min = data[0].comparaciones[7].temperatura_min,
+            ema_max = data[0].automaticas[7].temperatura_max,
+            co_max = data[0].convencionales[7].temperatura_max,
+            dif_max = data[0].comparaciones[7].temperatura_max,
+            nombreEMA = 'EMA Patahuasi',
+            nombreCO = 'CO Patahuasi',
+            stringFecha = data[0].fecha,
+            tituloMinimas = `Temp. Mínimas - Patahuasi - ${stringFecha}`,
+            tituloMaximas = `Temp. Máximas - Patahuasi - ${stringFecha}`,
+            dias = data[0].dias;
+
+            grafoTable(ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias);
+         };
+         if($seleccion.value==='yura'){
+            $tablaMinimas.querySelector('thead').innerHTML='';
+            $tablaMaximas.querySelector('thead').innerHTML='';
+            
+            let ema_min = data[0].automaticas[8].temperatura_min,
+            co_min = data[0].convencionales[8].temperatura_min,
+            dif_min = data[0].comparaciones[8].temperatura_min,
+            ema_max = data[0].automaticas[8].temperatura_max,
+            co_max = data[0].convencionales[8].temperatura_max,
+            dif_max = data[0].comparaciones[8].temperatura_max,
+            nombreEMA = 'EPA Yura',
+            nombreCO = 'CO Yura',
+            stringFecha = data[0].fecha,
+            tituloMinimas = `Temp. Mínimas - Yura - ${stringFecha}`,
+            tituloMaximas = `Temp. Máximas - Yura - ${stringFecha}`,
+            dias = data[0].dias;
+
+            grafoTable(ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias);
+         };
+         if($seleccion.value==='tuctumpaya'){
+            $tablaMinimas.querySelector('thead').innerHTML='';
+            $tablaMaximas.querySelector('thead').innerHTML='';
+            
+            let ema_min = data[0].automaticas[9].temperatura_min,
+            co_min = data[0].convencionales[9].temperatura_min,
+            dif_min = data[0].comparaciones[9].temperatura_min,
+            ema_max = data[0].automaticas[9].temperatura_max,
+            co_max = data[0].convencionales[9].temperatura_max,
+            dif_max = data[0].comparaciones[9].temperatura_max,
+            nombreEMA = 'EPA Tuctumpaya',
+            nombreCO = 'CO Tuctumpaya',
+            stringFecha = data[0].fecha,
+            tituloMinimas = `Temp. Mínimas - Tuctumpaya - ${stringFecha}`,
+            tituloMaximas = `Temp. Máximas - Tuctumpaya - ${stringFecha}`,
+            dias = data[0].dias;
+
+            grafoTable(ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias);
+         };
+         if($seleccion.value==='uzuna'){
+            $tablaMinimas.querySelector('thead').innerHTML='';
+            $tablaMaximas.querySelector('thead').innerHTML='';
+            
+            let ema_min = data[0].automaticas[10].temperatura_min,
+            co_min = data[0].convencionales[10].temperatura_min,
+            dif_min = data[0].comparaciones[10].temperatura_min,
+            ema_max = data[0].automaticas[10].temperatura_max,
+            co_max = data[0].convencionales[10].temperatura_max,
+            dif_max = data[0].comparaciones[10].temperatura_max,
+            nombreEMA = 'EMA SAN JOSE UZUNA',
+            nombreCO = 'CO SAN JOSE UZUNA',
+            stringFecha = data[0].fecha,
+            tituloMinimas = `Temp. Mínimas - San José Uzuna - ${stringFecha}`,
+            tituloMaximas = `Temp. Máximas - San José Uzuna - ${stringFecha}`,
+            dias = data[0].dias;
+
+            grafoTable(ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias);
+         };
+         if($seleccion.value==='ocona'){
+            $tablaMinimas.querySelector('thead').innerHTML='';
+            $tablaMaximas.querySelector('thead').innerHTML='';
+            
+            let ema_min = data[0].automaticas[11].temperatura_min,
+            co_min = data[0].convencionales[11].temperatura_min,
+            dif_min = data[0].comparaciones[11].temperatura_min,
+            ema_max = data[0].automaticas[11].temperatura_max,
+            co_max = data[0].convencionales[11].temperatura_max,
+            dif_max = data[0].comparaciones[11].temperatura_max,
+            nombreEMA = 'EMA OCOÑA',
+            nombreCO = 'CO OCOÑA',
+            stringFecha = data[0].fecha,
+            tituloMinimas = `Temp. Mínimas - Ocoña - ${stringFecha}`,
+            tituloMaximas = `Temp. Máximas - Ocoña - ${stringFecha}`,
+            dias = data[0].dias;
+
+            grafoTable(ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias);
+         };
+         if($seleccion.value==='cota'){
+            $tablaMinimas.querySelector('thead').innerHTML='';
+            $tablaMaximas.querySelector('thead').innerHTML='';
+            
+            let ema_min = data[0].automaticas[12].temperatura_min,
+            co_min = data[0].convencionales[12].temperatura_min,
+            dif_min = data[0].comparaciones[12].temperatura_min,
+            ema_max = data[0].automaticas[12].temperatura_max,
+            co_max = data[0].convencionales[12].temperatura_max,
+            dif_max = data[0].comparaciones[12].temperatura_max,
+            nombreEMA = 'EMA COTA COTA',
+            nombreCO = 'CO COTA COTA',
+            stringFecha = data[0].fecha,
+            tituloMinimas = `Temp. Mínimas - Cota Cota - ${stringFecha}`,
+            tituloMaximas = `Temp. Máximas - Cota Cota - ${stringFecha}`,
             dias = data[0].dias;
 
             grafoTable(ema_min,co_min,dif_min,ema_max,co_max,dif_max,nombreEMA,nombreCO,tituloMinimas,tituloMaximas,dias);
