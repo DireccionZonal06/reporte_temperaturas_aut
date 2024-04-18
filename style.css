@@ -9,9 +9,7 @@ body {
     
 }
 
-.cabecera {
-    
-}
+
 
 main {
     background-color: #DFE3E8
@@ -22,11 +20,19 @@ main {
 }
 
 .fila-minimas{
-    background-color: #3d4074;
+    background-color: #DFE3E8;
 }
 
 .fila-maximas{
-    background-color: #3d4074;
+    background-color: #DFE3E8;
+}
+
+#titulo-min{
+    color: white;
+}
+
+#titulo-max{
+    color: white;
 }
 
 /*.grafoMaximas  {
