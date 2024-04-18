@@ -31,6 +31,8 @@ const datos = data =>{
         if($seleccion.value==='chivay'){
             $tablaMinimas.querySelector('thead').innerHTML='';
             $tablaMaximas.querySelector('thead').innerHTML='';
+            $tituloMinimas.innerHTML='';
+            $tituloMaximas.innerHTML='';
            
             let ema_min = data[0].automaticas[0].temperatura_min,
             co_min = data[0].convencionales[0].temperatura_min,
@@ -50,6 +52,8 @@ const datos = data =>{
          if($seleccion.value==='crucero'){
             $tablaMinimas.querySelector('thead').innerHTML='';
             $tablaMaximas.querySelector('thead').innerHTML='';
+            $tituloMinimas.innerHTML='';
+            $tituloMaximas.innerHTML='';
             
             let ema_min = data[0].automaticas[1].temperatura_min,
             co_min = data[0].convencionales[1].temperatura_min,
@@ -69,6 +73,8 @@ const datos = data =>{
          if($seleccion.value==='imata'){
             $tablaMinimas.querySelector('thead').innerHTML='';
             $tablaMaximas.querySelector('thead').innerHTML='';
+            $tituloMinimas.innerHTML='';
+            $tituloMaximas.innerHTML='';
             
             let ema_min = data[0].automaticas[2].temperatura_min,
             co_min = data[0].convencionales[2].temperatura_min,
@@ -88,6 +94,8 @@ const datos = data =>{
          if($seleccion.value==='huanca'){
             $tablaMinimas.querySelector('thead').innerHTML='';
             $tablaMaximas.querySelector('thead').innerHTML='';
+            $tituloMinimas.innerHTML='';
+            $tituloMaximas.innerHTML='';
             
             let ema_min = data[0].automaticas[3].temperatura_min,
             co_min = data[0].convencionales[3].temperatura_min,
@@ -107,6 +115,8 @@ const datos = data =>{
          if($seleccion.value==='majes'){
             $tablaMinimas.querySelector('thead').innerHTML='';
             $tablaMaximas.querySelector('thead').innerHTML='';
+            $tituloMinimas.innerHTML='';
+            $tituloMaximas.innerHTML='';
             
             let ema_min = data[0].automaticas[4].temperatura_min,
             co_min = data[0].convencionales[4].temperatura_min,
@@ -126,6 +136,8 @@ const datos = data =>{
          if($seleccion.value==='cotahuasi'){
             $tablaMinimas.querySelector('thead').innerHTML='';
             $tablaMaximas.querySelector('thead').innerHTML='';
+            $tituloMinimas.innerHTML='';
+            $tituloMaximas.innerHTML='';
             
             let ema_min = data[0].automaticas[5].temperatura_min,
             co_min = data[0].convencionales[5].temperatura_min,
@@ -145,6 +157,8 @@ const datos = data =>{
          if($seleccion.value==='pampilla'){
             $tablaMinimas.querySelector('thead').innerHTML='';
             $tablaMaximas.querySelector('thead').innerHTML='';
+            $tituloMinimas.innerHTML='';
+            $tituloMaximas.innerHTML='';
             
             let ema_min = data[0].automaticas[6].temperatura_min,
             co_min = data[0].convencionales[6].temperatura_min,
@@ -164,6 +178,8 @@ const datos = data =>{
          if($seleccion.value==='patahuasi'){
             $tablaMinimas.querySelector('thead').innerHTML='';
             $tablaMaximas.querySelector('thead').innerHTML='';
+            $tituloMinimas.innerHTML='';
+            $tituloMaximas.innerHTML='';
             
             let ema_min = data[0].automaticas[7].temperatura_min,
             co_min = data[0].convencionales[7].temperatura_min,
@@ -183,6 +199,8 @@ const datos = data =>{
          if($seleccion.value==='yura'){
             $tablaMinimas.querySelector('thead').innerHTML='';
             $tablaMaximas.querySelector('thead').innerHTML='';
+            $tituloMinimas.innerHTML='';
+            $tituloMaximas.innerHTML='';
             
             let ema_min = data[0].automaticas[8].temperatura_min,
             co_min = data[0].convencionales[8].temperatura_min,
@@ -202,6 +220,8 @@ const datos = data =>{
          if($seleccion.value==='tuctumpaya'){
             $tablaMinimas.querySelector('thead').innerHTML='';
             $tablaMaximas.querySelector('thead').innerHTML='';
+            $tituloMinimas.innerHTML='';
+            $tituloMaximas.innerHTML='';
             
             let ema_min = data[0].automaticas[9].temperatura_min,
             co_min = data[0].convencionales[9].temperatura_min,
@@ -221,6 +241,8 @@ const datos = data =>{
          if($seleccion.value==='uzuna'){
             $tablaMinimas.querySelector('thead').innerHTML='';
             $tablaMaximas.querySelector('thead').innerHTML='';
+            $tituloMinimas.innerHTML='';
+            $tituloMaximas.innerHTML='';
             
             let ema_min = data[0].automaticas[10].temperatura_min,
             co_min = data[0].convencionales[10].temperatura_min,
@@ -240,6 +262,8 @@ const datos = data =>{
          if($seleccion.value==='ocona'){
             $tablaMinimas.querySelector('thead').innerHTML='';
             $tablaMaximas.querySelector('thead').innerHTML='';
+            $tituloMinimas.innerHTML='';
+            $tituloMaximas.innerHTML='';
             
             let ema_min = data[0].automaticas[11].temperatura_min,
             co_min = data[0].convencionales[11].temperatura_min,
@@ -259,6 +283,8 @@ const datos = data =>{
          if($seleccion.value==='cota'){
             $tablaMinimas.querySelector('thead').innerHTML='';
             $tablaMaximas.querySelector('thead').innerHTML='';
+            $tituloMinimas.innerHTML='';
+            $tituloMaximas.innerHTML='';
             
             let ema_min = data[0].automaticas[12].temperatura_min,
             co_min = data[0].convencionales[12].temperatura_min,
@@ -566,6 +592,15 @@ const grafoTableTotal=(ema_min_chivay,ema_min_crucero,ema_min_imata,ema_min_huan
 
    $tituloMinimas.innerHTML=tituloMinimas
 
+   tr_8.className="table-active"
+   tr_9.className="table-secondary text-dark"
+   tr_11.className="table-secondary text-dark"
+   tr_13.className="table-secondary text-dark"
+   tr_15.className="table-secondary text-dark"
+   tr_17.className="table-secondary text-dark"
+   tr_19.className="table-secondary text-dark"
+   tr_21.className="table-secondary text-dark"
+
    diasMes.forEach(e => {
     const th = d.createElement('th');
     th.innerHTML=e;
@@ -709,6 +744,15 @@ const grafoTableTotal=(ema_min_chivay,ema_min_crucero,ema_min_imata,ema_min_huan
    tr_35 = d.createElement('tr');
 
    $tituloMaximas.innerHTML=tituloMaximas
+
+   tr_22.className="table-active"
+   tr_23.className="table-secondary text-dark"
+   tr_25.className="table-secondary text-dark"
+   tr_27.className="table-secondary text-dark"
+   tr_29.className="table-secondary text-dark"
+   tr_31.className="table-secondary text-dark"
+   tr_33.className="table-secondary text-dark"
+   tr_35.className="table-secondary text-dark"
 
    diasMes.forEach(e => {
     const th = d.createElement('th');
